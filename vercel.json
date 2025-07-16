@@ -1,8 +1,0 @@
-{
-  "version": 2,
-  "functions": {
-    "api/verify-captcha.ts": {
-      "runtime": "edge"
-    }
-  }
-}
