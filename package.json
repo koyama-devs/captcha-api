@@ -1,5 +1,12 @@
 {
   "name": "captcha-api",
   "version": "1.0.0",
-  "dependencies": {}
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "typescript": "^5.0.0"
+  }
 }
