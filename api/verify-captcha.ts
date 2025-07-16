@@ -1,4 +1,17 @@
-export default async function handler(req: any, res: any) {
+import type { NextApiRequest, NextApiResponse } from "next";
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  // CORS header cho phép từ https://lxtechno.com
+  res.setHeader("Access-Control-Allow-Origin", "https://lxtechno.com");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  // Xử lý preflight request
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
+
+  // Từ chối phương thức khác POST
   if (req.method !== "POST") {
     return res.status(405).json({ success: false, error: "Method not allowed" });
   }
